@@ -133,7 +133,7 @@ def parse_attributes(df: pd.DataFrame):
 async def dump_sra(filepath: str):
     with open(filepath, "r") as file:
         srp_list = file.read().split("\n")
-    api = Dump(api_key="3358b18abd611927981172611e5ce915bc08")
+    api = Dump()  # you can specify api_key here
 
     search_results = await api.search_query("sra", term=srp_list, batch_size=10, sep=" OR ")
 
